@@ -1,7 +1,9 @@
 package com.example;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,12 +14,15 @@ public class HatorizApplication {
 		SpringApplication.run(HatorizApplication.class, args);
 	}
 
+    @Autowired
+    Environment env;
+
     ///------------------------------------------------------------
     @RestController
     class GreetingController{
         @RequestMapping("/")
         String Hello(){
-            return "hello";
+            return "hello from " + env.getProperty("bootrest.customerproperty");
         }
 
 //        Greet greet(){

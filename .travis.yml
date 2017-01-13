@@ -2,9 +2,7 @@ language: java
 jdk:
    - oraclejdk8
 
-install: ./101-Hello/gradlew check
-
-build: ./101-Hello/gradlew assemble
+build: ./101-Hello/gradlew build
 
 before_cache:
    - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
