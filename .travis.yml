@@ -1,7 +1,0 @@
-language: java
-jdk:
-   - oraclejdk8
-
-build: 
-   - cd $TRAVIS_BUILD_DIR/101-Hello
-   - ./gradlew build
