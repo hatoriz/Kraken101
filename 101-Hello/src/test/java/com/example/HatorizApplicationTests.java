@@ -15,12 +15,12 @@ public class HatorizApplicationTests {
 	public void contextLoads() {
 	}
 
-//	@Test
-//	public void testVanillaService() {
+	@Test
+	public void testVanillaService() {
 //		RestTemplate restTemplate = new RestTemplate();
 //        String result = restTemplate.getForObject("http://localhost:8080", String.class);
 //        Assert.isTrue(result.equals("hello"));
 //		Greet greet = restTemplate.getForObject("http://localhost:8080", Greet.class);
 //		Assert.isTrue(greet.getMessage().toString().equals("Hello World!"));
-//	}
+	}
 }
