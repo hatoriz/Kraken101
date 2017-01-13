@@ -16,27 +16,33 @@ public class HatorizApplication {
     @RestController
     class GreetingController{
         @RequestMapping("/")
-        Greet greet(){
-            return new Greet("Hello World!");
+        String Hello(){
+            return "hello";
         }
+
+//        Greet greet(){
+//            return new Greet("Hello World!");
+//        }
     }
-    class Greet {
-        public String getMessage() {
-            return message;
-        }
+}
 
-        public void setMessage(String message) {
-            this.message = message;
-        }
+class Greet {
+    public String getMessage() {
+        return message;
+    }
 
-        private String message;
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-        public Greet() {}
+    private String message;
 
-        public Greet(String message) {
-            this.message = message;
-        }
+    public Greet() {}
 
+    public Greet(String message) {
+        this.message = message;
     }
 
 }
+
+
