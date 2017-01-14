@@ -23,4 +23,17 @@ public class HatorizApplicationTests {
 //		Greet greet = restTemplate.getForObject("http://localhost:8080", Greet.class);
 //		Assert.isTrue(greet.getMessage().toString().equals("Hello World!"));
 	}
+
+//	@Test
+//	public void testSecureService() {
+//		String plainCreds = "guest:guest123";
+//		HttpHeaders headers = new HttpHeaders();
+//		headers.add("Authorization", "Basic " + new String(Base64.encode(plainCreds.getBytes())));
+//		HttpEntity<String> request = new HttpEntity<String>(headers);
+//		RestTemplate restTemplate = new RestTemplate();
+//
+//		ResponseEntity<Greet> response = restTemplate.exchange("http://localhost:8080", HttpMethod.GET, request, Greet.class);
+//		Assert.assertEquals("Hello World!", response.getBody().getMessage());
+//	}
+
 }
