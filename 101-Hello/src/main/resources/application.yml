@@ -4,6 +4,12 @@ server:
   port: 8081
 bootrest:
   customerproperty: 10X development
+
+security:
+  user:
+    name: guest
+    password: guest123
+
 ---
 spring:
   profiles: production
