@@ -22,7 +22,7 @@ public class HatorizApplication {
     class GreetingController{
         @RequestMapping("/")
         String Hello(){
-            return "hello from " + env.getProperty("bootrest.customerproperty");
+            return "Hello from " + env.getProperty("bootrest.customerproperty");
         }
 
 //        Greet greet(){

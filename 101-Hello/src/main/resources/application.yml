@@ -1,13 +1,15 @@
-#spring:
-#  profiles: development
+spring:
+  profiles: development
 server:
   port: 8081
-#---
-#spring:
-#  profiles: production
-#
-#server:
-#  port: 9090
-#
 bootrest:
-  customerproperty: 10X
+  customerproperty: 10X development
+---
+spring:
+  profiles: production
+
+server:
+  port: 9090
+
+bootrest:
+  customerproperty: 10X production
