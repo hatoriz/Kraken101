@@ -39,7 +39,7 @@ public class HatorizApplication {
         @RequestMapping("/")
         String Hello(){
             //return "Hello from " + env.getProperty("bootrest.customerproperty");
-            return "hello";
+            return "Hello this is hatoriz";
         }
 
 //        Greet greet(){

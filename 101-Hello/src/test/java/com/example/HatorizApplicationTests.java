@@ -1,14 +1,19 @@
 package com.example;
 
-import com.sun.org.apache.regexp.internal.RE;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.codec.Base64;
+import org.springframework.security.oauth2.client.DefaultOAuth2ClientContext;
+import org.springframework.security.oauth2.client.OAuth2RestTemplate;
+import org.springframework.security.oauth2.client.token.grant.password.ResourceOwnerPasswordResourceDetails;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.web.client.*;
-import org.springframework.util.*;
-import org.springframework.security.oauth2.client.token.grant.password.*;
-import org.springframework.security.oauth2.client.*;
+import org.springframework.util.Assert;
+import org.springframework.web.client.RestTemplate;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -27,17 +32,18 @@ public class HatorizApplicationTests {
 //		Assert.isTrue(greet.getMessage().toString().equals("Hello World!"));
 	}
 
-//	@Test
-//	public void testSecureService() {
-//		String plainCreds = "guest:guest123";
-//		HttpHeaders headers = new HttpHeaders();
-//		headers.add("Authorization", "Basic " + new String(Base64.encode(plainCreds.getBytes())));
-//		HttpEntity<String> request = new HttpEntity<String>(headers);
-//		RestTemplate restTemplate = new RestTemplate();
-//
-//		ResponseEntity<Greet> response = restTemplate.exchange("http://localhost:8080", HttpMethod.GET, request, Greet.class);
-//		Assert.assertEquals("Hello World!", response.getBody().getMessage());
-//	}
+	@Test
+	public void testSecureService() {
+		String plainCreds = "guest:guest123";
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("Authorization", "Basic " + new String(Base64.encode(plainCreds.getBytes())));
+		HttpEntity<String> request = new HttpEntity<String>(headers);
+		RestTemplate restTemplate = new RestTemplate();
+
+		ResponseEntity<Greet> response = restTemplate.exchange("http://localhost:8080", HttpMethod.GET, request, Greet.class);
+		//Assert.assertEquals("Hello World!", response.getBody().getMessage());
+        Assert.isTrue("Hello this is hatoriz".equals(response.getBody().getMessage()));
+	}
 
     @Test
     public void testOAuthService() {
