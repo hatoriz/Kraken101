@@ -19,7 +19,6 @@ public class Application {
 }
 
 
-
 @Component
 class Receiver {
 	@Autowired
