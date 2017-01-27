@@ -31,13 +31,11 @@ class Customer {
     public Customer() {
     }
 
-
     public Customer(String name, String email) {
         super();
         this.name = name;
         this.email = email;
     }
-
 
     public Long getId() {
         return id;

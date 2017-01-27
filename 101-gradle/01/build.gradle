@@ -1,0 +1,30 @@
+description = "Gradle script by hatoriz 101"
+
+task wrapper(type: Wrapper) {
+   gradleVersion = '2.0'
+}
+
+task compile {
+   doLast {
+      println '1-compiling source'
+   }
+}
+
+task compileTest(dependsOn: compile) {
+   doLast {
+      println '2-compiling unit tests'
+   }
+}
+
+task test(dependsOn: [compile, compileTest]) {
+   doLast {
+      println '3-running unit tests'
+   }
+}
+
+task dist(dependsOn: [compile, test]) {
+   doLast {
+      println '4-building the distribution'
+   }
+}
+
