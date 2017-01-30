@@ -1,0 +1,41 @@
+#Spring Boot - Actuator
+
+Spring Boot Actuator includes a number of additional features to help you monitor and
+manage your application when it's pushed to production. You can choose to manage and
+monitor your application using HTTP endpoints, with JMX or even by remote shell (SSH or
+Telnet).  Auditing, health and metrics gathering can be automatically applied to your
+application. The [http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready]
+covers the features in more detail.
+
+##Enabling the Actuator
+The simplest way to enable the features is to add a dependency to the
+`spring-boot-starter-actuator` '`Starter`'. To add the actuator to a Maven based
+project, add the following '`Starter`' dependency:
+
+````
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+	</dependencies>
+````
+
+For Gradle, use the declaration:
+
+```
+	dependencies {
+		compile("org.springframework.boot:spring-boot-starter-actuator")
+	}
+```
+
+##Features
+* **Endpoints** Actuator endpoints allow you to monitor and interact with your
+  application. Spring Boot includes a number of built-in endpoints and you can also add
+  your own. For example the `health` endpoint provides basic application health
+  information. Run up a basic application and look at `/health` (and see `/mappings` for
+  a list of other HTTP endpoints).
+* **Metrics** Spring Boot Actuator includes a metrics service with "`gauge`" and
+  "`counter`" support.  A "`gauge`" records a single value; and a "`counter`" records a
+  delta (an increment or decrement). Metrics for all HTTP requests are automatically
+  recorded, so if you hit the `metrics` endpoint should see a sensible response.
