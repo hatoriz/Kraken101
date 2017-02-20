@@ -4,3 +4,4 @@ This project containing the practice for building application using microservice
 Underlying technology are:
 * Java Spring Boot
 * Docker
+* JUnit
