@@ -15,11 +15,17 @@ public class DemoApplication {
 
     @RestController
     class GreetingController {
+
         @CrossOrigin
-        @RequestMapping("/")
+        @RequestMapping("/hello")
         String Hello() {
-            return "Hello this is greeting service at 20002";
+            return "Hello from service port number: 20002";
         }
+
+        @CrossOrigin
+        @RequestMapping("/goodbye")
+        String Goodbye() { return "Goodbye from service port number: 20002 ";}
+
     }
 
 }
