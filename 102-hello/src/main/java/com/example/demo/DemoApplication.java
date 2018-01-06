@@ -18,7 +18,7 @@ public class DemoApplication {
         @CrossOrigin
         @RequestMapping("/")
         String Hello() {
-            return "Hello this is hatoriz";
+            return "Hello this is greeting service at 20002";
         }
     }
 
